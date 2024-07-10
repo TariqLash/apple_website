@@ -5,8 +5,11 @@ import Hero from './components/Hero'
 import Highlights from './components/Highlights'
 import Model from './components/Model'
 
+import * as Sentry from '@sentry/react';
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  // return <button onClick={() => methodDoesNotExist()}>Break the world</button>;
 
   return (
     <main className='bg-black'>
@@ -19,4 +22,4 @@ function App() {
   )
 }
 
-export default App
+export default Sentry.withProfiler(App);
